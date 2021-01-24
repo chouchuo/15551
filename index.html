@@ -1,9 +1,81 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-    <head>
-        <title>Test</title>
-    </head>
-    <body>
-        <img src='img/01.png'>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    
+    <style>
+        @keyframes firstanimation{
+            from {opacity: 0;}
+            to {opacity: 100;}
+        }
+        body{
+            text-align: center;
+            /*overflow: hidden;隐藏底部*/
+            margin: 0;
+        }
+        
+        h1{
+            /*position: fixed;浮动显示*/
+            
+            left: 0;
+            width: 100%;
+            text-align: center;
+            
+            font-family: FangSong;
+            font-size: 50px;
+            color: #554d64;
+            padding: 0 20px;
+        }
+        
+        h1 span{
+            font-size:30px;
+            
+        }
+
+        img{
+		    vertical-align:middle;
+	    }
+
+        p{
+            font-family: Fangsong;
+        }
+        </style>
+        
+
+</head>
+
+<body style="background-color:#8584b8">
+    <audio src="audio/01.mp3" autoplay="autoplay" loop="loop"></audio>
+    <img src="img/02.jpg"  style="margin: 20px;">
+    
+    <h1 id="h1"></h1>
+    
+    <script>
+        window.onload=function starttime(){
+                time(h1,'2020,10,16');     // 在一起的时间
+                ptimer = setTimeout(starttime,1000);
+        }
+
+            function time(obj,futimg){
+                var nowtime = new Date().getTime(); 
+                var futruetime =  new Date(futimg).getTime();
+                var msec = nowtime-futruetime; 
+                var time = (msec/1000);
+                var day = parseInt(time/86400);
+                var hour = parseInt(time/3600)-24*day;
+                var minute = parseInt(time%3600/60); 
+                var second = parseInt(time%60); 
+
+                obj.innerHTML=
+                "我和阿星在一起度过了<br>"+day+"天"+hour+"小时"+minute+"分"+second+"秒"
+                return true;
+            }
+    </script>
+    <p>这是想和你说的第一句话</p>
+    <p>这是第二句话</p>
+    <p>这是第三句</p>
+    <p>但是现在都不告诉你</p>
+</body>
 </html>
