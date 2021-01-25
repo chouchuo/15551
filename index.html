@@ -60,13 +60,11 @@
 
         img{
 		    vertical-align:middle;
-            box-shadow: 10px 10px 5px #888888;
 	    }
 
         p{
             font-size: 30px;
             font-family: Fangsong;
-            
             
         }
         #firstp{
@@ -88,10 +86,8 @@
 
 <body style="background-color:#8584b8">
     <audio src="audio/01.mp3" autoplay="autoplay" loop="loop"></audio>
-    <!-- <img src="img/02.jpg"  style="margin: 20px;"> -->
-    <canvas id="pic"  width="200" height="185" style="margin: 20px;">
-        Your browser does not support the HTML5 canvas tag.
-        </canvas>
+    <img src="img/04.png"  style="margin: 20px;" width="400px" height="400px">
+    
     <h1 id="h1"></h1>
     
     <script>
@@ -120,26 +116,7 @@
             } else {
                 document.body.style.display = "none";
             };
-             };
-
-             var canvas = document.getElementById("pic");
-            if(canvas.getContext){
-            var ctx = canvas.getContext("2d");
-            var img = new Image();
-            img.src = "img/02.jpg";
-            img.onload = function(){
-                ctx.drawImage(img, 5, 5, 160, 145);
-            };
-            }
-            var can = document.getElementById("pic");
-            var ctx2 = can.getContext("2d");
-            ctx2.shadowOffsetX = 5;
-            ctx2.shadowOffsetY = 5;
-            ctx2.shadowBlur = 10;
-            ctx2.shadowColor="rgba(0, 0, 0, 0.5)"; // 设置透明度
-            //ctx2.fillStyle = "pink";   // 填充颜色
-            ctx2.fillRect(5, 5, 150, 70);
-            
+        };
     </script>
     <p id="firstp">这是想和你说的第一句话</p>
     <p id="secondp">这是第二句话</p>
