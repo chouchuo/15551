@@ -3,12 +3,36 @@
 
 <head>
     <meta charset="utf-8">
-    <title>星戴路</title>
+    <title>正在前往：星戴路</title>
     
     <style>
         @keyframes firstanimation{
-            from {opacity: 0;}
-            to {opacity: 100;}
+            0% {opacity: 0;}
+            20% {opacity: 100;}
+            50% {opacity: 100;}
+            75% {opacity: 100;}
+            100% {opacity: 100;}
+        }
+        @keyframes secondanimation{
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            50% {opacity: 100;}
+            75% {opacity: 100;}
+            100% {opacity: 100;}
+        }
+        @keyframes thirdanimation{
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            50% {opacity: 0;}
+            75% {opacity: 100;}
+            100% {opacity: 100;}
+        }
+        @keyframes fourthanimation{
+            0% {opacity: 0;}
+            20% {opacity: 0;}
+            50% {opacity: 0;}
+            75% {opacity: 0;}
+            100% {opacity: 100;}
         }
         body{
             text-align: center;
@@ -39,7 +63,21 @@
 	    }
 
         p{
+            font-size: 30px;
             font-family: Fangsong;
+            
+        }
+        #firstp{
+            animation: firstanimation 5s;
+        }
+        #secondp{
+            animation: secondanimation 5s;
+        }
+        #thirdp{
+            animation: thirdanimation 5s;
+        }
+        #fourthp{
+            animation: fourthanimation 5s;
         }
         </style>
         
@@ -47,7 +85,7 @@
 </head>
 
 <body style="background-color:#8584b8">
-    <audio src="audio/01.mp3" autoplay="autoplay" loop="loop" ></audio>
+    <audio src="audio/01.mp3" autoplay="autoplay" loop="loop"></audio>
     <img src="img/02.jpg"  style="margin: 20px;">
     
     <h1 id="h1"></h1>
@@ -72,10 +110,17 @@
                 "我和阿星在一起度过了<br>"+day+"天"+hour+"小时"+minute+"分"+second+"秒"
                 return true;
             }
+            document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                document.body.style.display = "block";
+            } else {
+                document.body.style.display = "none";
+            };
+        };
     </script>
-    <p>这是想和你说的第一句话</p>
-    <p>这是第二句话</p>
-    <p>这是第三句</p>
-    <p>但是现在都不告诉你</p>
+    <p id="firstp">这是想和你说的第一句话</p>
+    <p id="secondp">这是第二句话</p>
+    <p id="thirdp">这是第三句</p>
+    <p id="fourthp">但是现在都不告诉你:)</p>
 </body>
 </html>
