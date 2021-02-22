@@ -90,37 +90,10 @@
     
     <h1 id="h1"></h1>
     
-    <script>
-        window.onload=function starttime(){
-                time(h1,'2020,10,16');     // 在一起的时间
-                ptimer = setTimeout(starttime,1000);
-        }
-
-            function time(obj,futimg){
-                var nowtime = new Date().getTime(); 
-                var futruetime =  new Date(futimg).getTime();
-                var msec = nowtime-futruetime; 
-                var time = (msec/1000);
-                var day = parseInt(time/86400);
-                var hour = parseInt(time/3600)-24*day;
-                var minute = parseInt(time%3600/60); 
-                var second = parseInt(time%60); 
-
-                obj.innerHTML=
-                "我和阿星在一起度过了<br>"+day+"天"+hour+"小时"+minute+"分"+second+"秒"
-                return true;
-            }
-            document.onreadystatechange = function () {
-            if (document.readyState == "complete") {
-                document.body.style.display = "block";
-            } else {
-                document.body.style.display = "none";
-            };
-        };
-    </script>
-    <p id="firstp">相念在第二载玲珑</p>
-    <p id="secondp">归来恰好枝头吹落春风</p>
-    <p id="thirdp">谁笑痴人还颠倒梦中</p>
-    <p id="fourthp">平仄谢相逢</p>
+    
+    <p id="firstp">2月17日，星星走失了。</p>
+    <p id="secondp">2月22日，我亲自把碎片藏了起来。</p>
+    <p id="thirdp"></p>
+    <p id="fourthp"></p>
 </body>
 </html>
